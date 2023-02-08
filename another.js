@@ -1,2 +1,3 @@
-let temp = "Hello World";
-console.log(temp.slice(0,-1));
+let temp = "123";
+console.log(Number(' 0 4'));
+// console.log(Boolean(NaN))

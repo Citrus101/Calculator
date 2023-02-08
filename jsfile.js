@@ -14,10 +14,10 @@ function operate(op , num1,num2){
         case '-':
             return subtract(num1,num2);
             break;
-        case '*':
+        case 'x':
             return multiply(num1,num2);
             break;
-        case '/':
+        case '÷':
             return divide(num1,num2);
             break;
         
@@ -30,23 +30,30 @@ function operate(op , num1,num2){
 const buttons = document.querySelectorAll('button');
 const display = document.querySelector('.display');
 let operator = '';
-let num = {};
+let num;
 for(let i of buttons){
     i.addEventListener('click',(e) =>{
         // console.log(e.target.className);
         if (e.target.className == 'num') {
-            display.textContent += e.target.textContent;
-            
+            if (Number(display.textContent) ){ //Checks if the display has a operator or not, if yes then clears it and then displays a number
+            display.textContent+=e.target.textContent;
+            }
+            else{
+                display.textContent = '';
+                display.textContent+=e.target.textContent;
+
+            }
+
         }
         else if(e.target.className == 'op'){
-            num.push(display.textContent);
+            num = (display.textContent);
             operator = e.target.textContent;
             display.textContent =  e.target.textContent;
         }
         else if(e.target.className == 'clear') display.textContent = display.textContent.slice(0,-1);
         else if(e.target.className == 'allClear') display.textContent = '';
         else {
-            
+            display.textContent = operate(operator,Number(num),Number(display.textContent));
         }; 
          
 

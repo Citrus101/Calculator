@@ -6,6 +6,7 @@ body{
 #calculator{
     display: flex;
     flex-direction: column;
+    /* height: min; */
     width: 5rem;
     border: 1px solid red;
 
@@ -17,6 +18,8 @@ body{
 }
 button{
     flex: 1;
+    /* width: calc(100%/4); */
+
 }
 .clear{
     flex-grow: 2;
@@ -28,6 +31,6 @@ button{
     align-self: end;
     height: 1.3rem;
     /* text-anchor: end; */
-    direction: rtl;
+    /* direction: rtl; */
 
 }
