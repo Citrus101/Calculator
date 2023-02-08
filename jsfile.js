@@ -25,3 +25,31 @@ function operate(op , num1,num2){
 }
 
 // console.log(operate('-',2,1));
+
+
+const buttons = document.querySelectorAll('button');
+const display = document.querySelector('.display');
+let operator = '';
+let num = {};
+for(let i of buttons){
+    i.addEventListener('click',(e) =>{
+        // console.log(e.target.className);
+        if (e.target.className == 'num') {
+            display.textContent += e.target.textContent;
+            
+        }
+        else if(e.target.className == 'op'){
+            num.push(display.textContent);
+            operator = e.target.textContent;
+            display.textContent =  e.target.textContent;
+        }
+        else if(e.target.className == 'clear') display.textContent = display.textContent.slice(0,-1);
+        else if(e.target.className == 'allClear') display.textContent = '';
+        else {
+            
+        }; 
+         
+
+
+    })
+}

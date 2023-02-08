@@ -24,3 +24,10 @@ button{
 .calc{
     flex-grow: 2;
 }
+.display{
+    align-self: end;
+    height: 1.3rem;
+    /* text-anchor: end; */
+    direction: rtl;
+
+}
